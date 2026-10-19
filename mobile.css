@@ -1,0 +1,347 @@
+/* mobile.css - Mobile adaptations for DaturD.github.io
+   Loaded after style.css via: <link rel="stylesheet" href="mobile.css" media="(max-width: 767px)">
+   All rules are scoped to max-width 767px via the media attribute on the link tag.
+   This file adapts the existing desktop design for phone screens without changing
+   the desktop appearance. The desktop breakpoint effectively starts at 768px.
+*/
+
+/* ==========================================================
+   Header & Navigation
+   ========================================================== */
+
+.site-header {
+  padding-inline: 18px;
+}
+
+.brand {
+  font-size: 12px;
+}
+
+.brand-mark {
+  width: 29px;
+  height: 29px;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.menu-toggle span {
+  width: 15px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.nav {
+  position: absolute;
+  top: 63px;
+  left: 0;
+  right: 0;
+  height: auto;
+  padding: 12px 20px 20px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  display: none;
+}
+
+.nav.open { display: flex; }
+
+.nav-link {
+  height: auto;
+  padding: 12px 0;
+}
+
+.nav-link.active:after {
+  width: 28px;
+  bottom: 5px;
+  right: auto;
+}
+
+.theme-toggle {
+  width: 32px;
+  height: 32px;
+}
+
+/* Account for the fixed header when scrolling to anchor sections.
+   Position the section heading 20–40px below the fixed header.
+   The section padding-top provides the offset; scroll-padding-top is
+   not needed since the section padding handles both normal viewing
+   and anchor navigation. */
+
+/* ==========================================================
+   Section Shell & Headings
+   ========================================================== */
+
+.section-shell { width: calc(100% - 36px); }
+
+.section { padding-top: 88px; }
+
+.section-heading {
+  display: block;
+  margin-bottom: 27px;
+}
+
+.section-heading h2, .contact-copy h2 { font-size: 36px; }
+
+.section-aside {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+/* Hide the location note on very small screens to avoid clutter */
+.social-note { display: none; }
+
+/* ==========================================================
+   Hero Section
+   ========================================================== */
+
+.hero {
+  grid-template-columns: 1fr;
+  gap: 42px;
+  padding-top: 60px;
+  padding-bottom: 70px;
+  min-height: auto;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 13vw, 70px);
+}
+
+.hero-description {
+  font-size: 14px;
+}
+
+.hero-visual {
+  min-height: 340px;
+  margin-inline: 8px;
+}
+
+.portrait-frame {
+  height: 300px;
+}
+
+.orbit-a {
+  width: 350px;
+  height: 350px;
+  right: -45px;
+}
+
+.orbit-b {
+  width: 410px;
+  height: 410px;
+  right: -70px;
+}
+
+.chip-code {
+  left: -10px;
+  top: 65px;
+}
+
+.chip-support {
+  right: -10px;
+  bottom: 58px;
+}
+
+.scroll-cue {
+  bottom: 20px;
+}
+
+/* ==========================================================
+   About & Skills
+   ========================================================== */
+
+.about-layout {
+  grid-template-columns: 1fr;
+}
+
+.about-copy {
+  padding: 22px;
+}
+
+.about-facts {
+  grid-template-columns: 1fr;
+}
+
+.skills-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.skill-card {
+  padding: 14px;
+}
+
+/* Prevent skill label overflow on narrow screens */
+.tags span {
+  font-size: 8px;
+  padding: 4px 6px;
+}
+
+/* ==========================================================
+   Experience Timeline
+   ========================================================== */
+
+.timeline {
+  margin-left: 0;
+  gap: 12px;
+}
+
+.timeline-item {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.timeline-date {
+  grid-column: 1;
+  padding-top: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: -15px;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 1;
+}
+
+.timeline-marker:before {
+  top: 24px;
+  bottom: -15px;
+}
+
+.timeline-marker:after {
+  top: 20px;
+}
+
+.timeline-content {
+  grid-column: 1;
+  padding: 18px;
+  margin-left: 24px;
+}
+
+/* ==========================================================
+   Projects
+   ========================================================== */
+
+.projects-grid {
+  grid-template-columns: 1fr;
+}
+
+.project-media {
+  height: 190px;
+}
+
+.project-card-wide {
+  grid-column: auto;
+  display: block;
+}
+
+.project-card-wide .project-media {
+  height: 190px;
+  min-height: 0;
+}
+
+.project-body {
+  padding: 19px;
+}
+
+.project-body > p {
+  min-height: 0;
+}
+
+.project-links {
+  gap: 13px;
+}
+
+/* ==========================================================
+   Certificates
+   ========================================================== */
+
+.cert-grid {
+  grid-template-columns: 1fr;
+}
+
+.cert-card {
+  grid-template-columns: 1fr;
+}
+
+.cert-image {
+  height: 150px;
+}
+
+/* ==========================================================
+   Contact
+   ========================================================== */
+
+.contact-panel {
+  grid-template-columns: 1fr;
+  padding: 24px;
+  gap: 28px;
+  margin-top: 50px;
+}
+
+.resume-cta {
+  margin-top: 50px;
+  margin-bottom: 45px;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 22px;
+}
+
+.resume-cta > div {
+  align-items: flex-start;
+}
+
+.resume-cta h2 {
+  font-size: 14px;
+}
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+
+.site-footer {
+  padding: 20px 18px;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  order: 3;
+  width: 100%;
+}
+
+/* ==========================================================
+   Reduced Motion
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ==========================================================
+   Tiny mobile (under 380px)
+   ========================================================== */
+
+@media (max-width: 380px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .hero-actions .button { width: 100%; }
+  .cert-card { grid-template-columns: 1fr; }
+  .cert-image { height: 150px; }
+  .project-links { gap: 13px; }
+  .hero-role { font-size: 12px; }
+}
