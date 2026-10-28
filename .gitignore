@@ -1,0 +1,5 @@
+# GitHub Pages Portfolio - DaturD.github.io
+# Exclude dependencies and build artifacts
+
+node_modules/
+package-lock.json
